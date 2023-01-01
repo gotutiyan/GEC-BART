@@ -42,6 +42,7 @@ Here is a quick start example. You can use your data by changing `source`, `targ
 ```bash
 CUDA_VISIBLE_DEVICES=0 \
 accelerate launch train.py \
+--model_id facebook/bart-base \
 --source src \
 --target trg \
 --trainpref demo/train \
@@ -49,7 +50,8 @@ accelerate launch train.py \
 --outdir models/sample \
 --seed 1 \
 --epoch 5 \
---batch_size 1
+--batch_size 1 \
+--accumulation 1
 ```
 
 The training progress will be shown as the following format:
