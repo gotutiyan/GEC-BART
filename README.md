@@ -115,12 +115,12 @@ The trained models are available from Huggingface Hub:
 `gotutiyan/gec-bart-base`: [model card](https://huggingface.co/gotutiyan/gec-bart-base)  
 `gotutiyan/gec-bart-large`: [model card](https://huggingface.co/gotutiyan/gec-bart-large)
 
-The performances of the models are:
-|Data|Metric|gotutiyan/gec-bart-base|gotutiyan/gec-bart-large|Paper (bart-large)|
-|:--|:--|:--|:--|:--|
-|CoNLL-2014|M2 (P/R/F0.5)|70.0 / 38.5 / 60.2|71.01 / 43.3 / 62.9|69.3 / 45.0 /62.6|
-|BEA19-test|ERRANT (P/R/F0.5)|67.7 / 50.1 / 63.3|70.4 / 55.0 / 66.6|68.3 / 57.1 /65.6|
-|JFLEG-test|GLEU|55.2|57.8|57.3|
+For the evaluation of BEA19-dev, I regenerated the correction spans of the references with ERRANT: `errant_m2 -auto`.
+|Model|CoNLL14 (P/R/F0.5)|BEA19-dev (P/R/F0.5)|BEA19-test (P/R/F0.5)|JFLEG-dev (GLEU)|JFLEG-test (GLEU)|
+|:--|:-:|:-:|:-:|:-:|:-:|
+|Paper (bart-large)|69.3/45.0/62.6|-|68.3/57.1/65.6|-|57.3|
+|[gotutiyan/gec-bart-base](https://huggingface.co/gotutiyan/gec-bart-base)|70.0/38.5/60.2|56.0/29.0/47.2|67.7/50.1/63.3|51.5|55.2|
+|[gotutiyan/gec-bart-large](https://huggingface.co/gotutiyan/gec-bart-large)|71.01/43.3/62.9|60.2/33.7/52.0|70.4/55.0/66.6|52.9|57.8|
 
 The above results are for a single model. The beam width was set to 5 in the inference.  
 
